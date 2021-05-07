@@ -128,6 +128,7 @@ for i in range(256):
 aversions[0] = 'Bitcoin';
 aversions[48] = 'Litecoin';
 aversions[52] = 'Namecoin';
+aversions[25] = 'Blackcoin';
 aversions[111] = 'Testnet';
 
 class Network(collections.namedtuple('Network', 'name p2pkh_prefix p2sh_prefix wif_prefix segwit_hrp')):
@@ -179,10 +180,10 @@ def systype():
 def determine_db_dir():
 	if wallet_dir in "":
 		if platform.system() == "Darwin":
-			return os.path.expanduser("~/Library/Application Support/Bitcoin/")
+			return os.path.expanduser("~/Library/Application Support/Blackmore/")
 		elif platform.system() == "Windows":
-			return os.path.join(os.environ['APPDATA'], "Bitcoin")
-		return os.path.expanduser("~/.bitcoin")
+			return os.path.join(os.environ['APPDATA'], "Blackmore")
+		return os.path.expanduser("~/.blackmore")
 	else:
 		return wallet_dir
 
